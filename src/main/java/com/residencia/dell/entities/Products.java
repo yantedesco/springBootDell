@@ -1,10 +1,9 @@
 package com.residencia.dell.entities;
 
+import org.hibernate.validator.constraints.Range;
+
 import javax.persistence.*;
-import javax.validation.constraints.DecimalMax;
-import javax.validation.constraints.DecimalMin;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.math.BigDecimal;
 
 @Entity
@@ -29,8 +28,8 @@ public class Products {
         this.prodId = prodId;
     }
 
-    @NotBlank(message = "Preencha a categoria corretamente.")
-    @Size(min = 1, max = 16, message = "Tamanho mínimo: 1 / Tamanho máximo: 16")
+    @NotNull(message = "Preencha a categoria corretamente.")
+    @Range(min = 1, max = 16, message = "Tamanho mínimo: 1 / Tamanho máximo: 16")
     @Column(name = "category")
     public Integer getCategory() {
         return category;
