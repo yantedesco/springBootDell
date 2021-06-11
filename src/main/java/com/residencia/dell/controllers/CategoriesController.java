@@ -50,15 +50,15 @@ public class CategoriesController {
         return categoriesService.count();
     }
 
-    @PostMapping
-    public ResponseEntity<Categories> save(@RequestBody Categories category) {
-        HttpHeaders headers = new HttpHeaders();
-        Categories categories = categoriesService.save(category);
-        if (null != categories)
-            return ResponseEntity.ok().body(categories);
-        else
-            return new ResponseEntity<>(categoriesService.save(categories), headers, HttpStatus.BAD_REQUEST);
-    }
+//    @PostMapping
+//    public ResponseEntity<Categories> save(@RequestBody Categories category) {
+//        HttpHeaders headers = new HttpHeaders();
+//        Categories categories = categoriesService.save(category);
+//        if (null != categories)
+//            return ResponseEntity.ok().body(categories);
+//        else
+//            return new ResponseEntity<>(categoriesService.save(categories), headers, HttpStatus.BAD_REQUEST);
+//    }
 
     @PutMapping("/{id}")
     public ResponseEntity<Categories> update(@PathVariable Integer id, @RequestBody Categories categories) {

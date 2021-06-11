@@ -62,9 +62,14 @@ public class ProductsController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Products> update(@Valid @PathVariable Integer id, @RequestBody Products products) {
+    public ResponseEntity<Products> update(@Valid @RequestBody Products products, @PathVariable Integer id) {
         HttpHeaders headers = new HttpHeaders();
-        return new ResponseEntity<>(productsService.update(id, products), headers, HttpStatus.OK);
+        Products product = productsService.update(id, products);
+                if(null != products) {
+                    return ResponseEntity.ok().body(product);
+                } else {
+                    return new ResponseEntity<>(productsService.update(id, products), headers, HttpStatus.OK);
+                }
     }
 
     @DeleteMapping("/{id}")

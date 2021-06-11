@@ -51,7 +51,7 @@ public class Products {
     }
 
     @NotBlank(message = "Preencha o ator corretamente.")
-    @Size(min = 1, max = 50, message = "Tamanho mínimo: 1\nTamanho máximo: 50")
+    @Size(min = 1, max = 50, message = "Tamanho mínimo: 1 / Tamanho máximo: 50")
     @Column(name = "actor", nullable = false, length = 50)
     public String getActor() {
         return actor;
@@ -61,6 +61,7 @@ public class Products {
         this.actor = actor;
     }
 
+    @NotNull(message = "Preencha o preço corretamente.")
     @DecimalMin(value = "1", message = "O preço não pode ser menor que R${value}.00")
     @DecimalMax(value = "1000", message = "O preço não pode ser maior que R${value}.00")
     @Column(name = "price")

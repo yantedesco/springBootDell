@@ -91,13 +91,13 @@ public class CategoriesService {
         return categoriesRepository.count();
     }
 
-    public Categories save(Categories categories) {
-        if (categoriesRepository.save(categories).getCategory() != null) {
-            return categoriesRepository.save(categories);
-        } else {
-            return null;
-        }
-    }
+    //    public Categories save(Categories categories) {
+    //        if (categoriesRepository.save(categories).getCategory() != null) {
+    //            return categoriesRepository.save(categories);
+    //        } else {
+    //            return null;
+    //        }
+    //    }
 
 //    public Categories update(Categories categories){
 //        return categoriesRepository.save(categories);
