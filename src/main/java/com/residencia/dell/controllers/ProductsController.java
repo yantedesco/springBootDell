@@ -4,11 +4,9 @@ import com.residencia.dell.entities.Products;
 import com.residencia.dell.services.ProductsService;
 import com.residencia.dell.vo.ProductsVO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;

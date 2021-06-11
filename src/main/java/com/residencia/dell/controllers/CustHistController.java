@@ -1,5 +1,5 @@
 package com.residencia.dell.controllers;
-/*
+
 import com.residencia.dell.entities.CustHist;
 import com.residencia.dell.services.CustHistService;
 import com.residencia.dell.vo.CustHistVO;
@@ -62,7 +62,7 @@ public class CustHistController {
     @PutMapping("/{id}")
     public ResponseEntity<CustHist> update(@PathVariable Integer id, @RequestBody CustHist custHist) {
         HttpHeaders headers = new HttpHeaders();
-        return new ResponseEntity<>(custHistService.update(custHist, id), headers, HttpStatus.OK);
+        return new ResponseEntity<>(custHistService.update(id, custHist), headers, HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
@@ -74,4 +74,4 @@ public class CustHistController {
         }
         return ResponseEntity.ok().build();
     }
-}*/
+}
