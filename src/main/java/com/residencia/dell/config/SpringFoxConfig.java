@@ -2,7 +2,6 @@ package com.residencia.dell.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -25,10 +24,10 @@ public class SpringFoxConfig {
     private ApiInfo apiInfo() {
 
         return new ApiInfoBuilder()
-                .title ("Documentação da API DellStore")
-                .description ("Essa API foi desenvolvida para estudo do Framework Spring")
-                .license ("Apache License Version 2.0")
-                .version ("1.0.0")
+                .title("Documentação da API DellStore")
+                .description("Essa API foi desenvolvida para estudo do Framework Spring")
+                .license("Apache License Version 2.0")
+                .version("1.0.0")
                 .build();
     }
 }

@@ -20,7 +20,7 @@ public class Products {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "prod_id")
+    @Column(name = "prod_id", nullable = false)
     public Integer getProdId() {
         return prodId;
     }
@@ -29,6 +29,8 @@ public class Products {
         this.prodId = prodId;
     }
 
+    @NotBlank(message = "Preencha a categoria corretamente.")
+    @Size(min = 1, max = 16, message = "Tamanho mínimo: 1 / Tamanho máximo: 16")
     @Column(name = "category")
     public Integer getCategory() {
         return category;
@@ -60,8 +62,8 @@ public class Products {
         this.actor = actor;
     }
 
-    @DecimalMin(value = "1", message="O preço não pode ser menor que R${value}.00")
-    @DecimalMax(value = "1000", message="O preço não pode ser maior que R${value}.00")
+    @DecimalMin(value = "1", message = "O preço não pode ser menor que R${value}.00")
+    @DecimalMax(value = "1000", message = "O preço não pode ser maior que R${value}.00")
     @Column(name = "price")
     public BigDecimal getPrice() {
         return price;

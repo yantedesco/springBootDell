@@ -18,7 +18,7 @@ public class ControllerExceptionHandler extends ResponseEntityExceptionHandler {
 
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
-            HttpHeaders headers, HttpStatus status, WebRequest request) {
+                                                                  HttpHeaders headers, HttpStatus status, WebRequest request) {
 
         List<String> errors = new ArrayList<>();
         for (FieldError error : ex.getBindingResult().getFieldErrors()) {

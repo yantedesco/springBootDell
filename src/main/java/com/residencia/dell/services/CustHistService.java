@@ -1,20 +1,16 @@
 package com.residencia.dell.services;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.residencia.dell.entities.Orderlines;
 import com.residencia.dell.entities.CustHist;
-import com.residencia.dell.vo.OrderlinesVO;
+import com.residencia.dell.exceptions.CustHistException;
+import com.residencia.dell.repositories.CustHistRepository;
 import com.residencia.dell.vo.CustHistVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.residencia.dell.entities.CustHist;
-import com.residencia.dell.exceptions.CustHistException;
-import com.residencia.dell.repositories.CustHistRepository;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class CustHistService {
@@ -92,7 +88,7 @@ public class CustHistService {
         return custHistVO;
     }
 
-    public long count(){
+    public long count() {
         return custHistRepository.count();
     }
 
@@ -100,13 +96,13 @@ public class CustHistService {
 //        custHistRepository.save(custHist);
 //    }
 
-    public CustHist save(CustHist custHist){
+    public CustHist save(CustHist custHist) {
         return custHistRepository.save(custHist);
     }
 
-    public void update(CustHist custHist, Integer id) throws CustHistException{
+    public void update(CustHist custHist, Integer id) throws CustHistException {
         //Utilizando o Exception
-        if(null == id)
+        if (null == id)
             throw new CustHistException("Não foi informado um ID válido.");
 
         custHistRepository.save(custHist);

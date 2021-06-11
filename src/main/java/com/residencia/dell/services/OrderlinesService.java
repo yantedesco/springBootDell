@@ -1,19 +1,19 @@
 package com.residencia.dell.services;
 
-import com.residencia.dell.entities.Customers;
 import com.residencia.dell.entities.Orderlines;
 import com.residencia.dell.entities.Orders;
 import com.residencia.dell.repositories.OrderlinesRepository;
 import com.residencia.dell.repositories.OrdersRepository;
 import com.residencia.dell.vo.OrderlinesVO;
-import com.residencia.dell.vo.OrdersVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class OrderlinesService {
 
     @Autowired
@@ -114,7 +114,7 @@ public class OrderlinesService {
         return orderlinesVO;
     }
 
-    private Orderlines converteVOParaEntidade (OrderlinesVO orderlinesVO) {
+    private Orderlines converteVOParaEntidade(OrderlinesVO orderlinesVO) {
         Orderlines orderlines = new Orderlines();
 
 

@@ -1,10 +1,8 @@
 package com.residencia.dell.services;
 
 import com.residencia.dell.entities.Customers;
-import com.residencia.dell.entities.Orders;
 import com.residencia.dell.repositories.CustomersRepository;
 import com.residencia.dell.vo.CustomersVO;
-import com.residencia.dell.vo.OrdersVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -24,7 +22,7 @@ public class CustomersService {
         return customersRepository.findById(id).get();
     }
 
-    public List<Customers> findAll(){
+    public List<Customers> findAll() {
         return customersRepository.findAll();
     }
 
@@ -107,14 +105,14 @@ public class CustomersService {
         return customersVO;
     }
 
-    public long count(){
+    public long count() {
         return customersRepository.count();
     }
 
-    public Customers save(Customers customer){
-        if(customersRepository.save(customer).getCustomerid() != null){
+    public Customers save(Customers customer) {
+        if (customersRepository.save(customer).getCustomerid() != null) {
             return customersRepository.save(customer);
-        } else{
+        } else {
             return null;
         }
     }
@@ -152,11 +150,11 @@ public class CustomersService {
         newCustomers.setGender(customers.getGender());
     }
 
-    public boolean delete(Integer id){
-        if(id != null){
+    public boolean delete(Integer id) {
+        if (id != null) {
             customersRepository.deleteById(id);
             return true;
-        }else{
+        } else {
             return false;
         }
     }

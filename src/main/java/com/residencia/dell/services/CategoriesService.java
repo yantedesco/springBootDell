@@ -1,7 +1,6 @@
 package com.residencia.dell.services;
 
 import com.residencia.dell.entities.Categories;
-import com.residencia.dell.entities.Orders;
 import com.residencia.dell.repositories.CategoriesRepository;
 import com.residencia.dell.vo.CategoriesVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +22,7 @@ public class CategoriesService {
         return categoriesRepository.findById(id).get();
     }
 
-    public List<Categories> findAll(){
+    public List<Categories> findAll() {
         return categoriesRepository.findAll();
     }
 
@@ -88,14 +87,14 @@ public class CategoriesService {
         return categoriesVO;
     }
 
-    public long count(){
+    public long count() {
         return categoriesRepository.count();
     }
 
-    public Categories save(Categories categories){
-        if(categoriesRepository.save(categories).getCategory() != null){
+    public Categories save(Categories categories) {
+        if (categoriesRepository.save(categories).getCategory() != null) {
             return categoriesRepository.save(categories);
-        } else{
+        } else {
             return null;
         }
     }
@@ -114,11 +113,11 @@ public class CategoriesService {
         newCategories.setCategoryname(categories.getCategoryname());
     }
 
-    public boolean delete(Integer id){
-        if(id != null){
+    public boolean delete(Integer id) {
+        if (id != null) {
             categoriesRepository.deleteById(id);
             return true;
-        }else{
+        } else {
             return false;
         }
     }

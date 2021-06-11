@@ -1,7 +1,6 @@
 package com.residencia.dell.services;
 
 import com.residencia.dell.entities.Inventory;
-import com.residencia.dell.entities.Orders;
 import com.residencia.dell.repositories.InventoryRepository;
 import com.residencia.dell.vo.InventoryVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +22,7 @@ public class InventoryService {
         return inventoryRepository.findById(id).get();
     }
 
-    public List<Inventory> findAll(){
+    public List<Inventory> findAll() {
         return inventoryRepository.findAll();
     }
 
@@ -89,19 +88,19 @@ public class InventoryService {
         return inventoryVO;
     }
 
-    public long count(){
+    public long count() {
         return inventoryRepository.count();
     }
 
-    public Inventory save(Inventory inventory){
-        if(inventoryRepository.save(inventory).getProdId() != null){
+    public Inventory save(Inventory inventory) {
+        if (inventoryRepository.save(inventory).getProdId() != null) {
             return inventoryRepository.save(inventory);
-        } else{
+        } else {
             return null;
         }
     }
 
-    public Inventory update(Inventory inventory){
+    public Inventory update(Inventory inventory) {
         return inventoryRepository.save(inventory);
     }
 
@@ -117,11 +116,11 @@ public class InventoryService {
         newInventory.setSales(inventory.getSales());
     }
 
-    public boolean delete(Integer id){
-        if(id != null){
+    public boolean delete(Integer id) {
+        if (id != null) {
             inventoryRepository.deleteById(id);
             return true;
-        }else{
+        } else {
             return false;
         }
     }

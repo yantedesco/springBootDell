@@ -1,6 +1,9 @@
 package com.residencia.dell.entities;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "cust_hist")
@@ -11,6 +14,7 @@ public class CustHist {
     @Id
     @Column(name = "customerid")
     private Integer customerid;
+
     public Integer getCustomerid() {
         return customerid;
     }

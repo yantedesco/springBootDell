@@ -1,8 +1,9 @@
 package com.residencia.dell.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
-
-import javax.persistence.*;
+import javax.persistence.Table;
 import java.util.Calendar;
 
 @Entity
@@ -17,6 +18,7 @@ public class Reorder {
     @Id
     @Column(name = "prod_id")
     private Integer prodId;
+
     public Integer getProdId() {
         return prodId;
     }

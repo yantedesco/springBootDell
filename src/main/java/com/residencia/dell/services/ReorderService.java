@@ -1,11 +1,7 @@
 package com.residencia.dell.services;
 
-import com.residencia.dell.entities.Orderlines;
-import com.residencia.dell.entities.Orders;
 import com.residencia.dell.entities.Reorder;
 import com.residencia.dell.repositories.ReorderRepository;
-import com.residencia.dell.vo.OrderlinesVO;
-import com.residencia.dell.vo.OrdersVO;
 import com.residencia.dell.vo.ReorderVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -26,7 +22,7 @@ public class ReorderService {
         return reorderRepository.findById(id).get();
     }
 
-    public List<Reorder> findAll(){
+    public List<Reorder> findAll() {
         return reorderRepository.findAll();
     }
 
@@ -95,19 +91,19 @@ public class ReorderService {
         return reorderVO;
     }
 
-    public long count(){
+    public long count() {
         return reorderRepository.count();
     }
 
-    public Reorder save(Reorder reorder){
-        if(reorderRepository.save(reorder).getProdId() != null){
+    public Reorder save(Reorder reorder) {
+        if (reorderRepository.save(reorder).getProdId() != null) {
             return reorderRepository.save(reorder);
-        } else{
+        } else {
             return null;
         }
     }
 
-    public Reorder update(Reorder reorder){
+    public Reorder update(Reorder reorder) {
         return reorderRepository.save(reorder);
     }
 
@@ -125,11 +121,11 @@ public class ReorderService {
         newReorder.setDateExpected(reorder.getDateExpected());
     }
 
-    public boolean delete(Integer id){
-        if(id != null){
+    public boolean delete(Integer id) {
+        if (id != null) {
             reorderRepository.deleteById(id);
             return true;
-        }else{
+        } else {
             return false;
         }
     }
